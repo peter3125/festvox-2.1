@@ -3,6 +3,7 @@ FROM ubuntu:12.04
 MAINTAINER Peter de Vocht <peter@peter.co.nz>
 
 ENV LANG=C.UTF-8
+ENV VOICE awb
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		autoconf festival festlex-cmu festlex-poslex libestools1.2 unzip bzip2 \
@@ -14,11 +15,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN mkdir -p /usr/share/festival/voices/english/
 
 WORKDIR /usr/share/festival/voices/english/
-COPY cmu_us_slt_arctic-0.95-release.tar.bz2 .
-RUN tar jxf cmu_us_slt_arctic-0.95-release.tar.bz2
-RUN rm -f cmu_us_slt_arctic-0.95-release.tar.bz2
-RUN mv cmu_us_slt_arctic cmu_us_slt_arctic_clunits
-RUN echo "(set! voice_default 'voice_cmu_us_slt_arctic_clunits)" >> /etc/festival.scm
+COPY cmu_us_${VOICE}_arctic-0.95-release.tar.bz2 .
+RUN tar jxf cmu_us_${VOICE}_arctic-0.95-release.tar.bz2
+RUN rm -f cmu_us_${VOICE}_arctic-0.95-release.tar.bz2
+RUN mv cmu_us_${VOICE}_arctic cmu_us_${VOICE}_arctic_clunits
+RUN echo "(set! voice_default 'voice_cmu_us_${VOICE}_arctic_clunits)" >> /etc/festival.scm
 
 WORKDIR /
 # show usage
