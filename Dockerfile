@@ -29,6 +29,6 @@ RUN echo "(set! voice_default 'voice_cmu_us_${VOICE}_arctic_clunits)" >> /etc/fe
 
 WORKDIR /
 # show usage
-RUN echo "echo Hello world | docker run --rm -i festival /usr/bin/text2wave > hello.wav"
+RUN echo "echo Hello world | sudo docker run --rm -i festival /usr/bin/text2wave > hello.wav"
 
 CMD ["/bin/bash"]
