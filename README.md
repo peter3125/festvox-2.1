@@ -13,6 +13,11 @@ Once that is working you can try out synthesizing with the "cmu_us_slt_arctic-0.
 * You can modify the Dockerfile and change "ENV VOICE slt" to the three letter combo of one of the other voices to change the voice.
 * The cmu_us_slt voice is set as the default voice (also through the "ENV VOICE" setting)
 
+Building a docker image after downloading the voice file (execute from the repository clone directory)
+```
+sudo docker build -t festival .
+```
+
 Linux text to sound
 ```
 echo Hello world | sudo docker run --rm -i festival /usr/bin/text2wave | aplay
