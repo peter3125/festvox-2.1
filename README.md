@@ -10,7 +10,7 @@ To use this Docker image, you need to have a working version of Docker; on Linux
 Once that is working you can try out synthesizing with the "cmu_us_slt_arctic-0.95-release.tar.bz2" 
 * download voices from http://festvox.org/cmu_arctic/cmu_arctic/packed/  
 * The cmu_us_slt_arctic-0.95-release.tar.bz2 file needs to be downloaded and put int he same folder as the Dockerfile
-* You can modify the Dockerfile and change all references to "cmu_us_slt_arctic" with one of the other voices to change the voice.
+* You can modify the Dockerfile and change "ENV VOICE slt" to the three letter combo of one of the other voices to change the voice.
 * The cmy_us_slt voice is set as the default voice.  
 ```
 echo Hello world | sudo docker run --rm -i festival /usr/bin/text2wave | aplay
