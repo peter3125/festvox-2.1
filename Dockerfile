@@ -3,7 +3,7 @@ FROM ubuntu:12.04
 MAINTAINER Peter de Vocht <peter@peter.co.nz>
 
 ENV LANG=C.UTF-8
-ENV VOICE awb
+ENV VOICE stl
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		autoconf festival festlex-cmu festlex-poslex libestools1.2 unzip bzip2 \
