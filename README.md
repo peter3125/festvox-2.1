@@ -13,9 +13,14 @@ Once that is working you can try out synthesizing with the "cmu_us_slt_arctic-0.
 * You can modify the Dockerfile and change all references to "cmu_us_slt_arctic" with one of the other voices to change the voice.
 * The cmy_us_slt voice is set as the default voice.  
 ```
-echo Hello world | docker run --rm -i festival /usr/bin/text2wave | aplay
+echo Hello world | sudo docker run --rm -i festival /usr/bin/text2wave | aplay
 ```
 or to create a RIFF wave file
 ```
-echo Hello world | docker run --rm -i festival /usr/bin/text2wave > hello.wav
+echo Hello world | sudo docker run --rm -i festival /usr/bin/text2wave > hello.wav
 ```
+or create a RIFF wave from a text file
+```
+cat filename.txt | sudo docker run --rm -i festival /usr/bin/text2wave > filename.wav
+```
+
